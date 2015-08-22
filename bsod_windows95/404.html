@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>404 - Not Found</title>
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                color: white;
+                background-color: #06059E;
+                font-family: "Andale Mono", monospace;
+                font-weight: 900;
+                font-size: 1.5em;
+                display: table;
+                line-height: 1.3em;
+            }
+            .wrapper {
+                vertical-align: middle;
+                height: 100%;
+                display: table-cell;
+            }
+            .windows {
+                background-color: #A0A0A0;
+                color: #06059E;
+            }
+            .padded {
+                padding-left: 8em;
+                padding-right: 8em;
+            }
+            table {
+                font-size: inherit;
+                font-weight: inherit;
+            }
+            .astrix {
+                width: .8em;
+                margin-top: .3em;
+                margin-right: 1em;
+            }
+            .center {
+                text-align: center;
+            }
+            .vcenter {
+                vertical-align: top;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="center padded"><span class="windows">Windows</span></div>
+
+            <p class="message padded">A fatal exception 0D has occurred at 0246:014747FB.  The current application will be terminated.</p>
+
+            <table class="padded">
+                <tr>
+                    <td class="vcenter"><img class="astrix" src="astrix.png"></td>
+                    <td>Press and key to terminate the current application.</td>
+                </tr>
+                <tr>
+                    <td class="vcenter"><img class="astrix" src="astrix.png"></td>
+                    <td>Press CTRL+ALT+DEL again to restart your computer.  You will lose any unsaved information in all applications.</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <div class="center blink padded">Press any key to continue <span id="blink">_</span></div>
+        </div>
+
+        <script>
+            function blink(elementId) {
+                var element = document.getElementById(elementId);
+                setInterval(function() {
+                    if (!element.style.opacity) {
+                        element.style.opacity = 0;
+                    } else if (element.style.opacity === '1') {
+                        element.style.opacity = 0;
+                    } else if (element.style.opacity === '0') {
+                        element.style.opacity = 1;
+                    }
+
+                }, 1000);
+            }
+            blink('blink');
+        </script>
+
+    </body>
+</html>
