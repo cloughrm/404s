@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>404 - Not Found</title>
+        <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                color: white;
+                background-color: #1E5AAA;
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 1.6em;
+                display: table;
+            }
+            .wrapper {
+                vertical-align: middle;
+                height: 100%;
+                display: table-cell;
+                padding-left: 30%;
+                padding-right: 5%;
+            }
+            .sad-face {
+                font-size: 5em;
+            }
+            .more {
+                font-size: .5em;
+                padding-bottom: 30%;
+            }
+            .info {
+                line-height: 1.8em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="sad-face">:(</div>
+            <p class="info">Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you. (<span id="percent"></span>% complete)</p>
+            <br>
+            <p class="more">If you'd like to know more, you can search online later for this error: HAL_INITIALIZATION_FAILED</p>
+        </div>
+
+        <script>
+            function increment(elementId) {
+                var element = document.getElementById(elementId);
+                element.textContent = 0;
+                var interval = setInterval(function() {
+                    var existingNum = parseInt(element.textContent);
+                    element.textContent = existingNum + 1;
+                    if (existingNum >= 99) {
+                        clearInterval(interval);
+                    }
+                }, 300);
+            }
+            increment('percent');
+        </script>
+
+    </body>
+</html>
